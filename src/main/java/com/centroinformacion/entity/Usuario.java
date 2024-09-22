@@ -41,11 +41,5 @@ public class Usuario {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "America/Lima")
 	private Date fechaNacimiento;
 	
-	public String getNombreCompleto() {
-		if (nombres != null && apellidos != null) {
-			return nombres.concat(" ").concat(apellidos);	
-		}else {
-			return ""; 
-		}
-	}
+
 }

@@ -1,6 +1,5 @@
 package com.centroinformacion.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -65,60 +64,6 @@ public class Editorial {
 	@JoinColumn(name = "idUsuarioActualiza")
 	private Usuario usuarioActualiza;
 	
-	//Para el reporte
-	public String getReporteEstado() {
-		return estado == 1 ? "Activo": "Inactivo";
-	}
-	public String getReporteFecha() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(fechaRegistro);
-	}
-	//---
-	public Date getFechaRegistro() {
-		return fechaRegistro;
-	}
-	public void setFechaRegistro(Date fechaRegistro) {
-		this.fechaRegistro = fechaRegistro;
-	}
-
-	public int getIdEditorial() {
-		return idEditorial;
-	}
 	
-	public void setIdEditorial(int idEditorial) {
-		this.idEditorial = idEditorial;
-	}
-	
-	public String getRazonSocial() {
-		return razonSocial;
-	}
-
-	public int getEstado() {
-		return estado;
-	}
-
-	public void setEstado(int estado) {
-		this.estado = estado;
-	}
-
-	public void setRazonSocial(String razonSocial) {
-		this.razonSocial = razonSocial;
-	}
-	
-	public String getRuc() {
-		return ruc;
-	}
-
-	public void setRuc(String ruc) {
-		this.ruc = ruc;
-	}
-	
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
    
 }

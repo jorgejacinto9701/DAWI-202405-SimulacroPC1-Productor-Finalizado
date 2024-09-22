@@ -1,9 +1,11 @@
 package com.centroinformacion.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,10 +17,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -69,24 +67,5 @@ public class Revista {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUsuarioActualiza")
 	private Usuario usuarioActualiza;
-	public String getReporteEstado() {
-		return estado == 1 ? "Activo" : "Inactivo";
-	}
-	public String getReporteFechaCreacion() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(fechaCreacion);
-	}
 	
-	public String getReporteFechaRegistro() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(fechaRegistro);
-	}
-
-	public String getReporteTipo() {
-		return tipoRevista.getDescripcion();
-	}
-	public String getReportePais() {
-		return pais.getNombre();
-		
-	}	
 }
